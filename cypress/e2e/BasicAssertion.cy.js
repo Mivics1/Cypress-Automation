@@ -11,5 +11,11 @@ describe("Test Suite for beginner",()=>{
         //Add to cart the third item under the products parent
         cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
         //Click base on product name
+        cy.get('.products').find('.product').each(($e1, index, $list) => {
+            const textVeg = $e1.find('h4.product-name').text()
+            if(textVeg.includes('Cashews')){
+                $e1.find('button').click()
+            }
+        })
     })
 })

@@ -11,6 +11,5 @@ describe("Test Suite for beginner",()=>{
         //Add to cart the third item under the products parent
         cy.get('.products').find('.product').eq(2).contains('ADD TO CART').click()
         //Click base on product name
-
     })
 })

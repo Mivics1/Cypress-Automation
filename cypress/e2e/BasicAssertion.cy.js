@@ -17,5 +17,8 @@ describe("Test Suite for beginner",()=>{
                 $e1.find('button').click()
             }
         })
+        cy.get('.brand').then(function(logoelement){
+            cy.log(logoelement.text())
+        })
     })
 })

@@ -23,5 +23,7 @@ describe("Test Suite for beginner",()=>{
         cy.get('.brand').then(function(logoelement){
             cy.log(logoelement.text())
         })
+        //Assert if logo text is correctly displayed
+        cy.get('.brand').should('have.text','GREENKART')
     })
 })

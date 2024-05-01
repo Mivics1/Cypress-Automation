@@ -10,6 +10,8 @@ describe("Test Suite for beginner",()=>{
         cy.get('#checkBoxOption1').uncheck().should('not.be.checked')
         //Multi-check checkbox
         cy.get('input[type="checkbox"]').check(['option2','option3'])
-        
+
+        //Static Dropdown
+        cy.get('#dropdown-class-example').select('option1').should('have.value','option1')
     })
 })

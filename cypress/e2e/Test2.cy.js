@@ -23,6 +23,8 @@ describe("Test Suite for beginner",()=>{
             }
         })
         cy.get('#autocomplete').should('have.value','India')
+
+        //Check for visible and hide elements
         cy.get('#displayed-text').should('be.visible')
         cy.get('#hide-textbox').click()
         cy.get('#displayed-text').should('not.be.visible')

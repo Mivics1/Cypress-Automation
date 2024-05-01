@@ -13,5 +13,14 @@ describe("Test Suite for beginner",()=>{
 
         //Static Dropdown
         cy.get('#dropdown-class-example').select('option1').should('have.value','option1')
+
+        //Dynamic Dropdowns
+        cy.get('#autocomplete').type('Ind')
+        cy.get('.ui-menu-item div').each(($searchItem, index, $lastItem) => {
+            if($searchItem.text() ==='India'){
+                $searchItem.click()
+            }
+        })
+        cy.get('#autocomplete').should('have.value','India')
     })
 })

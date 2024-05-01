@@ -5,6 +5,7 @@ describe("Test Suite for beginner",()=>{
         //Visit the testing website
         cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
         //Check checkbox and confirm the check promise 
+        cy.wait(2000)
         cy.get('#checkBoxOption1').check().should('be.checked').and('have.value','option1')
         //Handshake the previous promise
         cy.get('#checkBoxOption1').uncheck().should('not.be.checked')
@@ -22,5 +23,10 @@ describe("Test Suite for beginner",()=>{
             }
         })
         cy.get('#autocomplete').should('have.value','India')
+        cy.get('#displayed-text').should('be.visible')
+        cy.get('#hide-textbox').click()
+        cy.get('#displayed-text').should('not.be.visible')
+        cy.get('#show-textbox').click()
+        cy.get('#displayed-text').should('be.visible')
     })
 })

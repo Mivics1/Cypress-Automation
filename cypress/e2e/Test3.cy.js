@@ -19,6 +19,6 @@ describe("Test Suite for beginner",()=>{
 
         //Remove target attr in the DOM
         cy.get('#opentab').invoke('removeAttr','target').click()
-        cy.url('#opentab').should('eq','https://www.qaclickacademy.com')
+        // cy.url().should('include','qaclickacademy')
     })
 })

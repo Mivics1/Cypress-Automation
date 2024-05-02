@@ -16,5 +16,8 @@ describe("Test Suite for beginner",()=>{
         cy.on('window:confirm',(str2)=>{
             expect(str2).to.equal('Hello , Are you sure you want to confirm?')
         })
+
+        //Remove target attr in the DOM
+        cy.get('#opentab').invoke('removeAttr','target').click()
     })
 })

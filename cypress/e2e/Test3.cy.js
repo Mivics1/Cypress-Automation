@@ -13,5 +13,8 @@ describe("Test Suite for beginner",()=>{
             expect(str).to.equal('Hello , share this practice page and share your knowledge')
         })
         cy.get('#confirmbtn').click().should('have.value','Confirm')
+        cy.on('window:confirm',(str2)=>{
+            expect(str2).to.equal('Hello , Are you sure you want to confirm?')
+        })
     })
 })

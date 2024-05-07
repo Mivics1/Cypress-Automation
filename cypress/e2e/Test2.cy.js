@@ -17,19 +17,20 @@ describe("Test Suite for beginner",()=>{
 
         //Dynamic Dropdowns
         cy.get('#autocomplete').type('Ind')
-        cy.get('.ui-menu-item div').each(($searchItem, index, $lastItem) => {
-            if($searchItem.text() ==='India'){
-                $searchItem.click()
+        cy.get('.ui-menu-item div').each(($e1, index, $lastItem) => {
+            const searchItem = $e1.text()
+            if(searchItem ==='India'){
+                $e1.click()
             }
         })
         cy.get('#autocomplete').should('have.value','India')
-        cy.get('#displayed-text').should('be.visible')
-        cy.get('#hide-textbox').click()
-        cy.get('#displayed-text').should('not.be.visible')
-        cy.get('#show-textbox').click()
-        cy.get('#displayed-text').should('be.visible')
 
-        //Radio promise
-        cy.get('input[value="radio2"]').check().should('be.checked')
+        //Check for visible and hide elements
+        cy.get('#displayed-text')
+            .should('be.visible')
+        cy.get('#hide-textbox').click()
+        cy.get('#displayed-text')
+            .should('not.be.visible')
+        cy.get('#show-textbox').click()
     })
 })

@@ -7,6 +7,7 @@ Moving from a beginner to an expert in Cypress automation involves mastering its
 
 <h2>Languages and Utilities Used</h2>
 
+- <b>Agile-Scrum (JIRA)</b>
 - <b>JavaScript</b> 
 - <b>Cypress Framework</b>
 - <b>Node Package</b>

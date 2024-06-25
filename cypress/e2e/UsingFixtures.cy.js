@@ -10,6 +10,8 @@ describe('Data driven test',function(){
     it('Using Fixtures attribute', function(){
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         cy.get('input[name="name"]:nth-child(2)').type(this.details.name)
+        cy.get('input[name="name"]:nth-child(2)').should('have.value',this.details.name)
+        // cy.get('input[name="name"]:nth-child(2)').should('have.length.above','2')
         cy.get('input[name="email"]').type(this.details.email) 
         cy.get('select').select(this.details.gender)
 

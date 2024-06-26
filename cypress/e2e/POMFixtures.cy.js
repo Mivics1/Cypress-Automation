@@ -27,7 +27,5 @@ describe('Data driven test',function(){
         })
         productPage.checkoutButton().click()
         cy.contains('Checkout').click()
-        cy.get('#country').type('India')
-        cy.get('.suggestions > ul > li > a').click()
     })
 })

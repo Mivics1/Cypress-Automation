@@ -1,6 +1,6 @@
 /// <reference types = "Cypress" />
 import HomePage from "./PageObjects/Homepage.js"
-
+import ProductPage from "./PageObjects/productPage.js"
 
 describe('Data driven test',function(){
     before(function(){
@@ -11,6 +11,7 @@ describe('Data driven test',function(){
     })
     it('Using Fixtures attribute', function(){  
         const homePage = new HomePage()
+        const productPage = new ProductPage()
         cy.visit('https://rahulshettyacademy.com/angularpractice/')
         homePage.getNameEditBox().type(this.details.name)
         homePage.getNameEditBox().should('have.value',this.details.name)
@@ -24,5 +25,9 @@ describe('Data driven test',function(){
         this.details.productNames.forEach(function(element){
             cy.selectProduct(element)
         })
+        productPage.checkoutButton().click()
+        cy.contains('Checkout').click()
+        cy.get('#country').type('India')
+        cy.get('.suggestions > ul > li > a').click()
     })
 })

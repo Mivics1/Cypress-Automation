@@ -43,7 +43,6 @@ describe('Data driven test',function(){
         })
         cy.contains('Checkout').click()
         cy.get('#country').type('India')
-        cy.get('.suggestions > ul > li > a',{timeout: 12000}).click()
         cy.get('#checkbox2').click({force:true})
         cy.get('.ng-untouched > .btn').click()
         cy.get('.alert').contains('Success! Thank you!')

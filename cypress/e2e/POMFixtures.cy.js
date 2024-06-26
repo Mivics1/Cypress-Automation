@@ -19,7 +19,7 @@ describe('Data driven test',function(){
         homePage.selectGender().select(this.details.gender)
         homePage.getNameEditBox().should('have.attr','minlength','2')
         homePage.getEnterpreneurStatus().should('be.disabled')
-        cy.get(':nth-child(2) > .nav-link').click()
+        homePage.getShopTab().click()
         // cy.selectProduct('Blackberry')
         this.details.productNames.forEach(function(element){
             cy.selectProduct(element)

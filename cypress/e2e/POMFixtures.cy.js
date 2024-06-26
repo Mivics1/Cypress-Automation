@@ -25,7 +25,7 @@ describe('Data driven test',function(){
         this.details.productNames.forEach(function(element){
             cy.selectProduct(element)
         })
-        productPage.checkoutButton().click()
+        productPage.checkoutButton().click() //Updated this
         cy.contains('Checkout').click()
     })
 })

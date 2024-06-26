@@ -1,6 +1,6 @@
 /// <reference types = "Cypress" />
 import HomePage from "./PageObjects/Homepage.js"
-import ProductPage from "./PageObjects/ProductPage.js"
+import ProductPage from "./PageObjects/productPage.js"
 
 describe('Data driven test',function(){
     before(function(){
@@ -27,5 +27,10 @@ describe('Data driven test',function(){
         })
         productPage.checkoutButton().click()
         cy.contains('Checkout').click()
+        cy.get('#country').type('India')
+        cy.get('.suggestions > ul > li > a',{timeout: 11000}).click()
+        cy.get('.checkbox').click()
+        cy.get('.ng-untouched > .btn').click()
+        cy.get('.alert').contains('Success! Thank you!')
     })
 })

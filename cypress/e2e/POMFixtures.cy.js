@@ -26,10 +26,25 @@ describe('Data driven test',function(){
             cy.selectProduct(element)
         })
         productPage.checkoutButton().click()
+        var sum = 0
+        cy.get('tr td:nth-child(4) strong').each(($item, index, $list)=>{
+            const Item = $item.text()
+            var selectedItem = Item.split(" ")
+            selectedItem = selectedItem[1].trim()
+            sum = Number(sum) + Number(selectedItem)
+        }).then(function(){
+            cy.log(sum)
+        })
+        cy.get('h3 strong').then(function(element){
+            const ele = element.text()
+            var res = ele.split(" ")
+            var total = res[1].trim()
+            expect(Number(total)).to.be.equal(sum)
+        })
         cy.contains('Checkout').click()
         cy.get('#country').type('India')
         cy.get('.suggestions > ul > li > a',{timeout: 12000}).click()
-        cy.get('.checkbox').click({force:true})
+        cy.get('#checkbox2').click({force:true})
         cy.get('.ng-untouched > .btn').click()
         cy.get('.alert').contains('Success! Thank you!')
     })

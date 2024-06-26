@@ -1,6 +1,6 @@
 /// <reference types = "Cypress" />
-import HomePage from "./PageObjects/Homepage.js"
-import ProductPage from "./PageObjects/productPage.js"
+import HomePage from "./PageObjects/Homepage"
+import ProductPage from "./PageObjects/productPage"
 
 describe('Data driven test',function(){
     before(function(){

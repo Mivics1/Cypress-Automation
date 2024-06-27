@@ -9,7 +9,7 @@ module.exports = defineConfig({
   },
   "defaultCommandTimeout" : 10000,
   "env":{
-    "url":"https://rahulshettyacademy.com/angularpractice/"
+    "url":"https://rahulshettyacademy.com"
   }
 });
 

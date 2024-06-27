@@ -7,5 +7,9 @@ module.exports = defineConfig({
       // implement node event listeners here
     },
   },
-  "defaultCommandTimeout" : 10000
+  "defaultCommandTimeout" : 10000,
+  "env":{
+    "url":"https://rahulshettyacademy.com/angularpractice/"
+  }
 });
+

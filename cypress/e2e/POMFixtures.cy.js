@@ -12,7 +12,7 @@ describe('Data driven test',function(){
     it('Using Fixtures attribute', function(){  
         const homePage = new HomePage()
         const productPage = new ProductPage()
-        cy.visit(Cypress.env(`url`))
+        cy.visit(Cypress.env(`url`)+"/angularpractice/")
         homePage.getNameEditBox().type(this.details.name)
         homePage.getNameEditBox().should('have.value',this.details.name)
         // cy.get('input[name="name"]:nth-child(2)').should('have.length.above','2')
